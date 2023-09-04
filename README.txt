@@ -1,33 +1,13 @@
-Hyperspace by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+This project represents a cloud-based resume application that employs an array of AWS (Amazon Web Services) services to optimize its functionality. It harnesses the following AWS services:
 
+Amazon S3 serves as the primary storage system for hosting the web page files. These files encompass the content and assets that compose the resume web page.
 
-So I've had the wireframe for this particular design kicking around for some time, but with all
-the other interesting (and in some cases, semi-secret) projects I've been working on it took me
-a little while to get to actually designing and coding it. Fortunately, things have eased up
-enough for me to finaly get around to it, so I'm happy to introduce Hyperspace: a fun, blocky,
-one-page design with a lot of color, a bit of animation, and an additional "generic" page template
-(because hey, even one-page sites usually need an interior page or two). Hope you dig it :)
+Amazon CloudFront operates as a Content Delivery Network (CDN) to ensure the efficient distribution of the web page content. It plays a crucial role in delivering the web page to users swiftly and with minimal latency.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+Amazon DynamoDB functions as the data store for tracking the number of visitors who access the web page. DynamoDB is well-suited for this purpose due to its scalability and low-latency characteristics.
 
-(* = not included)
+AWS Lambda plays a vital role in this setup by serving as an API layer for interactions with the DynamoDB database. It abstracts direct database access, providing a secure and controlled interface for data operations.
 
-AJ
-aj@lkn.io | @ajlkn
+Amazon Route 53 is utilized to establish a customized Domain Name System (DNS) domain name. This domain name is configured to point to the CloudFront distribution, enabling users to access the resume web page using a user-friendly and recognizable domain name.
 
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+On the technical side, JavaScript is embedded within the web page to implement a visitor tracking mechanism. This JavaScript code counts the number of visitors who access the web page and dynamically displays this count on the webpage. The combination of these AWS services and technical implementations ensures a scalable, performant, and user-friendly resume application in the cloud.
